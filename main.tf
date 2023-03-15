@@ -3,7 +3,7 @@ resource "aws_vpc" "main" {
 }
 
 
-data "aws_availability_zones" "available" {
+data "aws_availability_zones" "available" {}
 
 resource "aws_subnet" "private" {
   vpc_id                  = data.aws_vpc.vpc.id
