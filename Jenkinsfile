@@ -1,6 +1,12 @@
 pipeline{
     agent any
     stages{
+        stage('git checkout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/java-devops44/smaple-demo.git'
+            
+            }
+        }
        
         stage("TF Init"){
             steps{
