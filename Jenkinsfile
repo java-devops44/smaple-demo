@@ -1,11 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage{
-            stpes{
-                sh 'yum install terraform -y'
-            }
-        }        
+       
         stage("TF Init"){
             steps{
                 echo "Executing Terraform Init"
@@ -23,7 +19,7 @@ pipeline{
         }
         stage("TF Apply"){
             steps{
-                echo "Executing Terraform Apply"
+                echo "Executing Terraform Apply --auto-approve"
             }
         }
         stage("Invoke Lambda"){
